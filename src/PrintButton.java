@@ -24,12 +24,17 @@ public class PrintButton extends JButton {
     
     private class PrintListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			if (_holder.getPrintOrder().equals("PreOrder"))
+			if (_holder.getPrintOrder().equals("PreOrder") && !isEmpty())
 				_message.setText(_bst.preOrder());
-			else if (_holder.getPrintOrder().equals("InOrder"))
+			else if (_holder.getPrintOrder().equals("InOrder") && !isEmpty())
 				_message.setText(_bst.inOrder());
-			else if (_holder.getPrintOrder().equals("PostOrder"))
+			else if (_holder.getPrintOrder().equals("PostOrder") && !isEmpty())
 				_message.setText(_bst.postOrder());
 		}
+    }
+    
+    //post: returns true if BST is empty 
+    private boolean isEmpty(){
+    	return _bst.isEmpty();
     }
 }
