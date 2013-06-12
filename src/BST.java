@@ -165,9 +165,9 @@ public class BST {
     private String postOrderAux(Node aNode){
         String temp = "";
         if(aNode.getLeft() != null)
-        	temp += inOrderAux(aNode.getLeft());
+        	temp += postOrderAux(aNode.getLeft());
         if(aNode.getRight() != null)
-        	temp += inOrderAux(aNode.getRight());
+        	temp += postOrderAux(aNode.getRight());
         	temp += " " + aNode.getElement();
     	return temp;
     }
